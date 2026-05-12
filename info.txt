@@ -1,0 +1,2 @@
+file_count_news="5"
+downloads="100000"

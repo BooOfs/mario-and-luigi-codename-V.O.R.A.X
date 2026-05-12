@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="download.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="windows.css">
+    <link rel="stylesheet" href="support.css">
+    <title>Mario and Luigi Shattered Crystal</title>
+    
+    
+<!-- Nicht von mir erstellt, original: https://gist.github.com/benchristel/7feca2ef6943ea8f353f96d5f3a1a538-->
+   <style>
+      ::-webkit-scrollbar {
+        background: linear-gradient(to right, #ccc, #fff 20%, #ddd);
+        cursor: default;
+      }
+
+      ::-webkit-scrollbar {
+        background: linear-gradient(to bottom, #ccc, #fff 20%, #ddd);
+        cursor: default;
+      }
+
+      ::-webkit-scrollbar-track:vertical {
+        background: linear-gradient(to right, #eee, #fff);
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #ddd;
+        width: 16px;
+        border-radius: 100px;
+        box-shadow: inset 2px 0 3px #0002, inset 0 -2px 3px #0003, inset 0 2px 3px #0003;
+      }
+
+      ::-webkit-scrollbar-track:vertical:window-inactive {
+        box-shadow: inset 2px 0 3px #0041, inset 0 -2px 3px #0041, inset 0 2px 3px #0041;
+      }
+
+      ::-webkit-scrollbar-track:horizontal {
+        background: linear-gradient(to bottom, #eee, #fff);
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #bbb;
+        border-right: 1px solid #ddd;
+        width: 16px;
+        border-radius: 100px;
+        box-shadow: inset 0 2px 3px #0002, inset -2px 0 3px #0003, inset 2px 0 3px #0003;
+      }
+
+      ::-webkit-scrollbar-track:horizontal:window-inactive {
+        box-shadow: inset 0 2px 3px #0041, inset -2px 0 3px #0041, inset 2px 0 3px #0041;
+      }
+
+      ::-webkit-scrollbar-thumb:vertical {
+        background:
+          linear-gradient(to right, #6af 10%, #fff4 20%, #6af 30%, #9ef),
+          linear-gradient(to bottom, #6af 5px, #6af0 10px),
+          linear-gradient(to top, #6af 5px, #6af0 10px);
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        box-shadow: inset 0 0 4px #004;
+        min-height: 30px;
+        -webkit-border-radius: 100px;
+      }
+
+      ::-webkit-scrollbar-thumb:vertical:window-inactive {
+        background:
+          linear-gradient(to bottom, #eee 5px, #eee0 10px),
+          linear-gradient(to top, #eee 5px, #eee0 10px),
+          linear-gradient(to right, #ddd 10%, #fff 20%, #eee 30%, #fff);
+        box-shadow: inset 0 0 4px #0044;
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal {
+        background:
+          linear-gradient(to bottom, #6af 10%, #fff4 20%, #6af 30%, #9ef),
+          linear-gradient(to right, #6af 5px, #6af0 10px),
+          linear-gradient(to left, #6af 5px, #6af0 10px);
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        box-shadow: inset 0 0 4px #004;
+        min-width: 30px;
+        -webkit-border-radius: 100px;
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal:window-inactive {
+        background:
+          linear-gradient(to right, #eee 5px, #eee0 10px),
+          linear-gradient(to left, #eee 5px, #eee0 10px),
+          linear-gradient(to bottom, #ddd 10%, #fff 20%, #eee 30%, #fff);
+        box-shadow: inset 0 0 4px #0044;
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        box-shadow: inset 0 0 7px #004;
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: linear-gradient(to right, #ccc, #fff 20%, #ddd);
+      }
+
+    </style>
+<meta charset="UTF-8">
+</head>
+<body style="--bg-color: #F00;">
+    
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred"/>
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="150"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg> 
+    
+<div class="background_box"></div>
+<div class="liquid-glass-card">
+    <div class="menu-button" id="start">Start</div>
+    <hr class="Seperator_start">
+    <div class="menu-button" id="download">Download</div>
+    <hr class="Seperator">
+    <div class="menu-button" id="news">News</div>
+    <hr class="news_Seperator">
+    <div class="menu-button" id="support">Support</div>
+    <hr class="support_Seperator">
+    <div class="menu-button" id="team">Team</div>                                      
+</div>
+<video id="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="bg-video.mp4" type="video/mp4">
+</video>
+
+
+    
+    
+<div class="start_page" id="start_page_id" data-pos-max="0">
+    
+    <div class="title">
+        <img src="Introducing_Letters/I.png" class="letter" style="--i:0">
+        <img src="Introducing_Letters/n.png" class="letter" style="--i:1">
+        <img src="Introducing_Letters/t.png" class="letter" style="--i:2">
+        <img src="Introducing_Letters/r.png" class="letter" style="--i:3">
+        <img src="Introducing_Letters/o.png" class="letter" style="--i:4">
+        <img src="Introducing_Letters/d.png" class="letter" style="--i:5">
+        <img src="Introducing_Letters/u.png" class="letter" style="--i:6">
+        <img src="Introducing_Letters/c.png" class="letter" style="--i:7">
+        <img src="Introducing_Letters/i_klein.png" class="letter" style="--i:8">
+        <img src="Introducing_Letters/n.png" class="letter" style="--i:9">
+        <img src="Introducing_Letters/g.png" class="letter" style="--i:10">
+        <img src="Introducing_Letters/....png" class="letter" style="--i:11">
+    </div>
+    <img src="Logo.png" class="logo">
+</div>
+<div class="download_page" id="download_page_id" data-pos-max="989">
+    <div class="chapter_buttons">
+        <div class="chapter_button" data-chapter="1">Chapter 1</div>
+        <div class="chapter_button" data-chapter="2">Chapter 2</div>
+        <div class="chapter_button" data-chapter="3">Chapter 3</div>
+        <div class="chapter_button" data-chapter="4">Chapter 4</div>
+    </div>
+    <div class="ChapterContents">
+        <img class="preview_image" src="">
+        <div id="preview_dots" data-id="1"></div>
+        <div class="arrows_background"data_text="🢀">    
+            <div class="forward_arrow" data_text="🢂">🢂</div>
+            <div class="back_arrow"data_text="🢀">🢀</div>
+            <div class="middle_symbol"data_text="-" number="3">-</div>
+        </div>
+        <div class="description_box">
+            <div class="description_text" data-text=""></div>
+            <div class="download_box">Download</div>
+        </div> 
+    </div>
+</div>  
+<div class="news_page" id = "news_page_id" data-pos-max="1900">  
+        <div class="news_content" id="news_content_id" style="--offset-right: 0; --offset-top: 5; --index: 0;" >
+                <div class="news_bg">
+                    <img class="news_picture" data-picture-path="" src="">
+                </div>
+                <div class="news_titel_bg" style="--scale-up: 0;">
+                    <div class="news_title" data-news-title=""></div>     
+                </div>
+                <div class="news_date_bg">
+                    <div class="news_date" data-news-date=""></div>            
+                </div>
+        </div>
+        <div class="news_buttons">
+                <div class="news_page_btn news_buttons_left" id="News_Arrow_Left" style="--dir: -1;">🢀</div>
+                <div class="news_page_counter" id="news_page_count">N/A</div>
+                <div class="news_page_btn news_buttons_right" id="News_Arrow_Right" style="--dir: 1;">🢂</div>
+        </div>
+</div>
+<div class="support_page" id = "support_page_id" data-pos-max="2800">  
+    <div class="download_amount_box right">
+        <img class="download_amount_sillhouete" src="Assets/bros_sillhouette.png">
+        <div class="download_amount_currently">Currently:</div>
+        <div class="download_amount_text" id="download_amount_counter">N/A</div>
+        <div class="download_amount_downloads">DOWNLOADS</div>
+        <div class="downloads_underline" style="--i: 1;"></div>
+        <div class="downloads_underline" style="--i: 2;"></div>
+        <div class="downloads_underline" style="--i: 3;"></div>
+    </div>
+    <div class="download_amount_box left">
+        <div class="donate_box">
+            <input class="donate_box_text_input" type="text" placeholder="Type your amount in here..." id="support_amount_donation">
+        </div>
+        <div class="download_support_text">Buy us a Coffee:</div>
+        <img class="logo_paypal">
+        <button type="button" class="button_applepay" id="button_applepay"></button>
+        <button type="button" class="button_paypal" id="button_paypal"></button>
+        <button type="button" class="support_pay_button" id="support_pay_button">Pay</button>
+    </div>
+</div>
+<div class="team_page" id = "team_page_id" data-pos-max="3700">
+    
+</div>
+<div id="window_template" class="window" style="display: none;">
+    <div class="resize left"></div>
+    <div class="resize top"></div>
+    <div class="resize bottom"></div>
+    <div class="resize right"></div>
+    <div class="resize nw"></div>
+    <div class="resize ne"></div>
+    <div class="resize sw"></div>
+    <div class="resize se"></div>
+    <div class="window_header">
+        <div class="draggable_part"></div>
+        <span class="window_title">Title</span>
+        <div class="window_controls">
+            <button class="aqua-btn btn_close"></button>
+            <button class="aqua-btn btn_min"></button>
+            <button class="aqua-btn btn_max"></button>
+        </div>
+        <div class="type_website">
+                <div class="searchbar">
+                    <img class="searchbar_icon" src="Assets/globe_icon.png">
+                    <span class="website_url">Url</span>
+                </div>
+        </div>
+        <hr class="window_seperator">
+    </div>
+    <div class="window_content">
+        <!-- Hier kommt dann jeglicher "Window Content" rein, d.h z.B für News-->
+    </div>
+</div>
+    
+    
+
+    
+    
+<script src="support.js"></script>    
+<script src="window_manager.js"></script>   
+<script src="news.js"></script> 
+<script src="main.js"></script> 
+<script src="downloads.js"></script> 
+</body>
+</html>

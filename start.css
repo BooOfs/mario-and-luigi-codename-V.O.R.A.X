@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'BungeeInline-Regular';
+  src: url('BungeeInline-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+    
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  transition: background 0.6s ease; 
+}
+@keyframes bounce_logo {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-15px) scale(0.97);
+  }
+}
+
+
+
+.logo {
+  height: 438px;
+  width: 1036.5px;
+
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+
+  box-shadow: 0px 0px 19px -1px rgba(255, 255, 255, 0.3);
+  border-radius: 32px;
+  z-index: 2;
+}
+.logo_shadow {
+  height: 438px;
+  width: 1036.5;
+ position: fixed;
+ top: 50vh;
+ left: 50vw;
+ filter: blur(20px);
+  transform: translate(-50%, -50%);
+ z-index: 1;6
+ color: black;
+    
+}
+
+.title {
+  position: relative;
+  top: 100px;
+  left: 70%;
+
+  display: flex;
+  gap: 2px;
+}
+.letter {
+  animation: bounce 1.2s infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+  height: 114px; 
+  display: inline-block;
+  height: 120px;
+  filter: drop-shadow(0px 5px 0px rgba(0,0,0,0.5));
+  transition: transform 0.2s ease;
+}
+
