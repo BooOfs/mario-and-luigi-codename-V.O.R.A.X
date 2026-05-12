@@ -33,17 +33,14 @@ body {
 
 
 .logo {
-  height: 438px;
-  width: 1036.5px;
-
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-
-  box-shadow: 0px 0px 19px -1px rgba(255, 255, 255, 0.3);
-  border-radius: 32px;
-  z-index: 2;
+    height: 438px;
+    width: 1036.5px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    box-shadow: 0px 0px 19px -1px rgba(255, 255, 255, 0.3);
+    border-radius: 32px;
+    z-index: 2;
 }
 .logo_shadow {
   height: 438px;

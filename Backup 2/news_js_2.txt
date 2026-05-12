@@ -1,0 +1,84 @@
+var news_article_array = [];
+document.addEventListener("DOMContentLoaded", function(){
+   spawn_news_article() 
+    
+    
+    
+    
+    
+    
+
+    
+});
+function spawn_news_article() {
+    var template_news_article = document.getElementById("news_content_id");
+    var text_path = "News_Text"
+    var amount_of_files = 4;
+    var items_per_page = 3;
+    var current_text_file_name_number = 0;
+    var previous_text_file_name_number = 0;
+    for (let i=1; i < amount_of_files; i++) {
+        
+        console.log("File", amount_of_files)
+        var template_element = document.getElementById("news_content_id");
+        const cloned_element = template_element.cloneNode(true);
+        cloned_element.dataset.newsIndex = String(i);
+        cloned_element.style.display = "block";
+        template_element.parentNode.appendChild(cloned_element);
+        var clone_element_bg = cloned_element.querySelector(".news_bg");
+        var offset = i * 0.90
+        cloned_element.style.setProperty("--offset-right", offset);
+        console.log(cloned_element, " Klon")
+        var clone_element_image = cloned_element.querySelector(".news_picture");
+        console.log(clone_element_image, "Image");
+        cloned_element.style.setProperty("--index",String(i));
+        news_article_array.push(cloned_element);
+        console.log(news_article_array);
+        
+    }
+    var order_na = [];
+    for (var news_article of news_article_array) {
+        var index = news_article.style.getPropertyValue("--index");
+        var text_file_data
+        var text_path = "News_Texts/"+index+".txt";
+        fetch(text_path)
+           .then(response => response.text())
+           .then(data=> {
+            
+            text_file_data = data;
+            const preview_path_regex = /preview_pic="(.+?)"/;
+            const match_preview_image_path = text_file_data.match(preview_path_regex);
+
+            if (match_preview_image_path)
+                {
+                    const target_path = match_preview_image_path[1];
+                    console.log("Found Path: ", target_path);
+
+                    var news_article_preview_image = news_article.querySelector(".news_picture");
+                    news_article_preview_image.src = target_path;
+                }
+            
+            
+            const date_path_regex =  /date="(.+?)"/;
+            const match_date_path = text_file_data.match(date_path_regex);
+            
+            if (match_date_path) 
+                {
+                    const target_date = match_date_path[1];
+                    console.log("Found Date: ", target_date)
+                    
+                    order_na.push(news_article);
+                    
+                    
+                    
+                    
+                    
+                }
+        })
+        .catch(error => console.error("Error loading text:",error))
+        
+        
+        
+
+    }
+}

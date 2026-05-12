@@ -92,6 +92,7 @@ function createWindow(title,w,h,contentHTML,themeClass,draggable,rezsizeable,typ
        makeResizeable(win);
        }
     refresh_max_height(win)
+    refresh_data_lt()
 }
 
 function makeDraggable(win)

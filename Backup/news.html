@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="start.css">
+    <title>Mario and Luigi Shattered Crystal</title>
+</head>
+
+<body>
+
+
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred"/>
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="150"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="background_box"></div>
+
+<div class="liquid-glass-card">
+    <div class="menu-button" id="start">Start</div>
+    <hr class="Seperator_start">
+    <div class="menu-button" id="download">Download</div>
+    <hr class="Seperator">
+    <div class="menu-button" id="news">News</div>
+    <hr class="news_Seperator">
+    <div class="menu-button" id="support">Support</div>
+    <hr class="support_Seperator">
+    <div class="menu-button" id="team">Team</div>
+</div>
+
+
+
+
+<video autoplay muted loop id="bg-video">
+    <source src="bg-video.mp4" type="video/mp4">
+</video>
+
+
+<script src="news.js"></script>
+
+</body>
+</html>

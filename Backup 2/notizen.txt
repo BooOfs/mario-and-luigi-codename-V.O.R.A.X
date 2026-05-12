@@ -1,0 +1,11 @@
+<p> um texte zu schreiben
+<hr> für eine horizontale Linie
+<br> Break, Zeilenumbruch
+<b> Fetter Text
+<i> kursiver Text
+<mark> markieren
+<small> Kleiner text
+<del> durchgestrichener Text
+<ins> Unterstrichen
+<sup> hochgestellter text
+<sub> tiefgestellter Text

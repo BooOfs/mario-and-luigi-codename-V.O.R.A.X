@@ -1,0 +1,11 @@
+Syntax: createWindow(title,w,h,contentHTML,themeClass,draggable,rezsizeable,type)
+There are currently These types
+normal:
+	best use with
+	fetch("linktree.html")
+    		.then(res => res.text())
+    		.then(html => {
+        		createWindow("LinkTree", 800, 900, html, "link_tree", true, true, "normal");
+    	});
+website:
+	use let html = '"<iframe class="content_website" src="url"'
