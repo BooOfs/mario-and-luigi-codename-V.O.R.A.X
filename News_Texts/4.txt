@@ -1,0 +1,4 @@
+preview_pic="Preview_Chapters/1_1.jpg"
+date="01.05.2026"
+hour="15:00"
+headline="Bestes Spiel der Welt! -IGN 2026"

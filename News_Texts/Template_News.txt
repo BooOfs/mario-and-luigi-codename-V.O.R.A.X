@@ -1,0 +1,26 @@
+# ----- Meta Daten ----- #
+preview_pic="Preview_Chapters/1_1.jpg"
+date="04.05.2026"
+hour="15:00"
+headline="Krasser Titel" # Titelbar Text
+
+# ----- Artikel Daten ----- #
+text="text eingeben" 
+bild="path"
+youtube_video="link_hier" # Muss "https://youtube.com/embed/video_id" sein
+header="titel" # Simple Überschrift
+empty="" # Leerzeile
+
+# ----- Text Formatting Options ----- #
+<mark>Wort</mark> # Yellow Mark
+del>Wort</del>    # Durchgestrichen
+<ins>Wort</ins>	  # Unterstrichen
+<sub>Wort</sub>	  # Tiefsatz
+<sup>Wort</sup>	  # Hochsatz
+<b>Wort</b>	  # Bold
+<i>Wort</i>	  # Italic
+# ----- Infos ----- #
+# Auf der Seite werden die Artikel nach dem Date Sortiert. Aktuell macht die Uhrzeit bei der Sortierung keinen Unterschied, könnte aber in Zukunft behoben werden.
+# Man kann hier quasi ein Mix n' Match machen, in der Reihenfolge erscheint es dann auch.
+# Es wäre easy möglich, ein GUI Programm zu entwickeln, was vielleicht mit Direkt Vorschau, dir es vereinfach sowas zu schreiben
+# Geplant ist noch ein Kapitel Feature was das lesen verbessern soll.

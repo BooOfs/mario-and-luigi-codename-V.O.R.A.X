@@ -1,0 +1,12 @@
+preview_pic="Preview_Chapters/1_2.jpg"
+date="06.05.2026"
+hour="13:00"
+headline="DEV Log 5, a Showcase of the New Mechanics"
+
+
+header="Coole Überschrift!"
+text="Lorem <mark>ipsum</mark> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
+bild="Preview_Chapters/1_1.jpg"
+empty=""
+youtube_video="https://youtube.com/embed/HDDxxeh3r-E?si=2BiYZZ-V6Sdga3R5"
+text=" XYZFEFEIFIE"
